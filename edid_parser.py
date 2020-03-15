@@ -82,7 +82,9 @@ class EDIDParser:
         #             b'\x00\x00\xFC\x00\x54\x4F\x53\x48\x49\x42\x41\x2D\x54' \
         #             b'\x56\x0A\x20\x20\x00\x00\x00\xFD\x00\x17\x3D\x0F\x44' \
         #             b'\x0F\x00\x0A\x20\x20\x20\x20\x20\x20\x01\x24'
-        self.bin_data = bin_data
+        bstr = bytes.fromhex(bin_data) 
+        print(bstr) 
+        self.bin_data = bstr
 
         if self.bin_data:
             self.parse_all()
@@ -628,9 +630,11 @@ class EDIDParsingError(Exception):
 
 if __name__ == "__main__":
     import sys
-    import pprint
-
-    with open(sys.argv[1], 'rb') as edid_file:
-        TEMP_EDID = EDIDParser(edid_file.read())
-
-    print(pprint.pprint(TEMP_EDID.data))
+    #import pprint
+    print("Main")
+    # with open(sys.argv[1], 'rb') as edid_file:
+    #     TEMP_EDID = EDIDParser(edid_file.read())
+    arg = sys.argv[1]
+    print(arg)
+    EDIDParser(arg)
+    #print(pprint.pprint(TEMP_EDID.data))
