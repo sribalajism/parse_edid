@@ -631,7 +631,7 @@ class EDIDParsingError(Exception):
 if __name__ == "__main__":
     import sys
     #import pprint
-    print("Main")
+    print("Main") 
     # with open(sys.argv[1], 'rb') as edid_file:
     #     TEMP_EDID = EDIDParser(edid_file.read())
     arg = sys.argv[1]
